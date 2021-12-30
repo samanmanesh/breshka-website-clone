@@ -11,9 +11,13 @@ module.exports = {
         lg: "4rem",
         xl: "5rem",
       },
-      center: true
+      center: true,
+    },
+    extend: {
+     
     },
   },
+
   variants: {},
   plugins: [],
 };

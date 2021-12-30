@@ -1,19 +1,23 @@
 export default function Home() {
   return (
     <>
-      <main className="container min-h-screen grid pt-48 md:pt-0 md:place-items-center">
-        <div className="md:text-center">
-          <h1 className="text-5xl font-semibold ">
-            Next.js, TailwindCSS, TypeScript Template!
-          </h1>
-          <p className="text-2xl text-gray-600 md:max-w-2xl mx-auto mt-12 md:mt-6">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda,
-            architecto, ducimus cumque temporibus optio quae dolore expedita
-            itaque ut minima labore nisi veniam amet rerum quidem, quam dolorum
-            vero nulla.
-          </p>
-        </div>
-      </main>
+      <section className=" min-h-screen flex ">
+        <div className="  min-w-[28rem]   flex-shrink-0 "> 
+       <img src="" alt="" />
+      <div></div>
+      <div></div>
+      <div></div>
+
+        
+        
+        
+        
+         </div>
+        <div className={` w-full  bg-cover bg-center bg-[url('https://static.bershka.net/4/static/itxwebstandard/images/worldwide/index.jpg?t=20211230023526')]   `} > hekkii</div>
+
+      </section>
     </>
   );
 }
+
+//container min-h-screen grid pt-48 md:pt-0 md:place-items-center

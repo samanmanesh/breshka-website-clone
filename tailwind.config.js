@@ -14,12 +14,10 @@ module.exports = {
       center: true,
     },
     extend: {
-
-     
+      fontFamily: {
+        'sans': ['Apercu', 'Helvetica', 'Arial', 'sans-serif']
+      }
     },
-    fontFamily: {
-      
-  },
   },
 
   variants: {},

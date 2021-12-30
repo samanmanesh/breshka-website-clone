@@ -2,3 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@font-face {
+  font-family: "Apercu";
+  src: url("/fonts/Apercu-Font/Apercu-Pro-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display:swap ;
+}

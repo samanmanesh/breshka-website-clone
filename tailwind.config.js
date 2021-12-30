@@ -15,7 +15,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'sans': ['Apercu', 'Helvetica', 'Arial', 'sans-serif']
+        'sans': ['Apercu', 'Helvetica', 'Arial', 'sans-serif'],
+        'apercu-light': ['Apercu-light', 'Helvetica', 'Arial', 'sans-serif']
       }
     },
   },

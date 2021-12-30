@@ -2,9 +2,19 @@ export default function Home() {
   return (
     <>
       <section className=" min-h-screen flex ">
-        <div className="  min-w-[28rem]   flex-shrink-0 "> 
-       <img src="" alt="" />
-      <div></div>
+        <div className="  min-w-[28rem]  flex-shrink-0 pl-20 pt-8 "> 
+       <img src="./Bershka_logo.svg" alt="Breshka" title="Bershka" className=" w-42 h-10" />
+      <div>
+        <p>Select your location</p>
+        <div>
+        <span>Market</span>
+        <button className=" flex" >
+          <span>icon and Canada</span>
+          <span>arrow</span>
+
+        </button> 
+        </div>
+      </div>
       <div></div>
       <div></div>
 

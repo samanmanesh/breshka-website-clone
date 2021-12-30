@@ -14,8 +14,12 @@ module.exports = {
       center: true,
     },
     extend: {
+
      
     },
+    fontFamily: {
+      
+  },
   },
 
   variants: {},

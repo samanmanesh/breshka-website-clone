@@ -29,8 +29,8 @@ export default function Home() {
                 Market
               </span>
 
-              <button className=" bg-indigo-400 flex p-1 w-full content-between">
-                <span className=" flex items-center ">
+              <button className=" bg-indigo-400 flex p-1 w-full ">
+                <span className=" flex items-center w-full content-between ">
                   <img
                   src="./clipboard.svg"
                   alt="location"
@@ -38,11 +38,11 @@ export default function Home() {
                   className="w-6 h-3  bg-yellow-400"
                 />
 
-                  <span className="w-full bg-blue-600"> Canada</span>
+                  <span className="w-full bg-blue-600 text-left "> Canada</span>
 
                 </span>
 
-                <span className="bg-red-400">arrow</span>
+                <img src="./chevron-down.svg" alt="arrow"  className="bg-yellow-200  w-4 h-4"/>
               </button>
             </div>
           </div>

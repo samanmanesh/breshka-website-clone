@@ -89,7 +89,7 @@ export const CountrySelection = (
             <ChevronDownIcon className="w-6 h-6  mx-4" />
           </Listbox.Button>
 
-          <Listbox.Options className="bg-white drop-shadow-md absolute w-9/12 left-0 top-11  h-80 p-2 rounded overflow-hidden ">
+          <Listbox.Options className="bg-white drop-shadow-md absolute w-9/12 left-0 top-11  h-80 p-2 rounded overflow-auto ">
             <input
               id="search-field"
               className="block  w-full rounded bg-gray-100 border-transparent py-2 pl-4 pr-1 text-gray-900 placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
@@ -99,7 +99,7 @@ export const CountrySelection = (
               // onChange={}
               // onKeyDown={}
             />
-            <div>
+            <div className="">
               {countries.map((country) => (
                 <Listbox.Option
                   key={country.name}

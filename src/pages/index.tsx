@@ -6,6 +6,8 @@ export default function Home() {
 
   const [selectedLanguage, setSelectedLanguage] =
     useState(true);
+  const [selectedCountry, setSelectedCountry] =
+    useState("");
 
   useEffect(() => {
     if (false) {
@@ -22,7 +24,10 @@ export default function Home() {
           title="Bershka"
           className=" w-38 h-10  "
         />
-        <CountrySelection />
+        <CountrySelection
+          selectedCountry={selectedCountry}
+          setSelectedCountry={setSelectedCountry}
+        />
 
         <div className="">
           <p className="text-md font-bold mb-6">
@@ -62,7 +67,7 @@ export default function Home() {
         </div>
 
         <button className=" py-3 px-14 rounded  bg-black text-white text-base hover:bg-gray-800">
-          SAVE
+          {selectedCountry ? "SAVE" : "GO!"}
         </button>
       </div>
       <div

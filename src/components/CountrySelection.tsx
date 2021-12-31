@@ -8,7 +8,11 @@ import {
   ChevronUpIcon,
 } from "@heroicons/react/solid";
 
-interface Props {}
+interface Props {
+  selectedCountry: ICountries | string; 
+  setSelectedCountry
+
+}
 
 // const countries = [
 //   "Canada",
@@ -26,6 +30,10 @@ interface Props {}
 //   "Colombia",
 //   "Ecuador",
 // ];
+interface ICountries {
+  name: string;
+  store: boolean;
+}
 
 const countries = [
   { name: "Canada", store: true },
@@ -45,14 +53,15 @@ const countries = [
 ];
 
 export const CountrySelection = (
-  props: Props
+  {selectedCountry, setSelectedCountry}: Props
 ) => {
   // const [showSearchModule, setShowSearchModule] =
   //   React.useState(false);
-  const [selectedCountry, setSelectedCountry] =
-    useState("");
+  
+  // const [selectedCountry, setSelectedCountry] =
+  //   useState("");
 
-  const checkHasIcon = (country: string) => {
+  const checkHasIcon = (country: ICountries | string) => {
     const countryObj = countries.find(
       (c) => c.name === country
     );

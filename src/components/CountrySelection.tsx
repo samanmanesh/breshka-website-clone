@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Listbox } from "@headlessui/react";
 
 import { ShoppingBagIcon } from "@heroicons/react/outline";
@@ -9,9 +9,8 @@ import {
 } from "@heroicons/react/solid";
 
 interface Props {
-  selectedCountry: ICountries | string; 
-  setSelectedCountry
-
+  selectedCountry: ICountries | string;
+  setSelectedCountry;
 }
 
 // const countries = [
@@ -52,16 +51,26 @@ const countries = [
   { name: "Ecuador", store: true },
 ];
 
-export const CountrySelection = (
-  {selectedCountry, setSelectedCountry}: Props
-) => {
-  // const [showSearchModule, setShowSearchModule] =
-  //   React.useState(false);
-  
-  // const [selectedCountry, setSelectedCountry] =
-  //   useState("");
+export const CountrySelection = ({
+  selectedCountry,
+  setSelectedCountry,
+}: Props) => {
+  const [search, setSearch] =
+    useState<string>("");
 
-  const checkHasIcon = (country: ICountries | string) => {
+  const searchResults = useMemo(
+    () =>
+      countries.filter((country) =>
+        country.name
+          .toLowerCase()
+          .includes(search.toLowerCase())
+      ),
+    [search]
+  );
+
+  const checkHasIcon = (
+    country: ICountries | string
+  ) => {
     const countryObj = countries.find(
       (c) => c.name === country
     );
@@ -81,55 +90,68 @@ export const CountrySelection = (
           value={selectedCountry}
           onChange={setSelectedCountry}
         >
-          <Listbox.Button className=" rounded w-9/12 border border-black  h-10 relative flex items-center   ">
-            <span className=" font-light text-xs bg-white px-1 absolute bottom-8 left-4 ">
-              Market
-            </span>
+          {({ open }) => (
+            <>
+              <Listbox.Button className=" rounded w-9/12 border border-black  h-10 relative flex items-center   ">
+                <label className=" font-light text-xs bg-white px-1 absolute bottom-8 left-4 ">
+                  Market
+                </label>
 
-            {checkHasIcon(selectedCountry) ? (
-              <ShoppingBagIcon className="w-5 h-5 ml-5" />
-            ) : (
-              ""
-            )}
+                {checkHasIcon(selectedCountry) ? (
+                  <ShoppingBagIcon className="w-5 h-5 ml-5" />
+                ) : (
+                  ""
+                )}
 
-            <span className="w-full text-left ml-4 font-apercu-light font-medium text-sm">
-              {selectedCountry}
-            </span>
-            <ChevronDownIcon className="w-6 h-6  mx-4" />
-          </Listbox.Button>
+                <span className="w-full text-left ml-4 font-apercu-light font-medium text-sm">
+                  {selectedCountry}
+                </span>
+                {open ? (
+                  <ChevronUpIcon className="w-6 h-6  mx-4" />
+                ) : (
+                  <ChevronDownIcon className="w-6 h-6  mx-4" />
+                )}
+              </Listbox.Button>
 
-          <Listbox.Options className="bg-white drop-shadow-md absolute w-9/12 left-0 top-11  h-80 p-2 rounded overflow-auto ">
-            <input
-              id="search-field"
-              className="block  w-full rounded bg-gray-100 border-transparent py-2 pl-4 pr-1 text-gray-900 placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
-              placeholder="Search"
-              type="search"
-              name="search"
-              // onChange={}
-              // onKeyDown={}
-            />
-            <div className="">
-              {countries.map((country) => (
-                <Listbox.Option
-                  key={country.name}
-                  value={country.name}
-                  // disabled={country.store}
-                  className="flex items-center gap-2 p-2 w-full text-left font-apercu-light font-light text-sm "
-                >
-                  <span className="w-4 ">
-                    {country.store ? (
-                      <ShoppingBagIcon className="w-3 h-3" />
-                    ) : (
-                      ""
-                    )}
-                  </span>
-                  <span className="">
-                    {country.name}
-                  </span>
-                </Listbox.Option>
-              ))}
-            </div>
-          </Listbox.Options>
+              <Listbox.Options className="bg-white drop-shadow-md absolute w-9/12 left-0 top-11 max-h-80 p-2 rounded overflow-auto ">
+                <input
+                  id="search-field"
+                  className="block  w-full rounded bg-gray-100 border-transparent py-2 pl-4 pr-1 text-gray-900 placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
+                  placeholder="Search"
+                  type="search"
+                  name="search"
+                  value={search}
+                  onChange={(e) =>
+                    setSearch(e.target.value)
+                  }
+                  // onChange={}
+                  // onKeyDown={}
+                />
+                <div className="">
+                  {searchResults.map(
+                    (country) => (
+                      <Listbox.Option
+                        key={country.name}
+                        value={country.name}
+                        className="flex items-center gap-2 p-2 w-full text-left font-apercu-light font-light text-sm "
+                      >
+                        <span className="w-4 ">
+                          {country.store ? (
+                            <ShoppingBagIcon className="w-3 h-3" />
+                          ) : (
+                            ""
+                          )}
+                        </span>
+                        <span className="">
+                          {country.name}
+                        </span>
+                      </Listbox.Option>
+                    )
+                  )}
+                </div>
+              </Listbox.Options>
+            </>
+          )}
         </Listbox>
       </div>
     </div>

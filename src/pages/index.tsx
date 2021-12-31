@@ -1,4 +1,5 @@
 import { CountrySelection } from "components/CountrySelection";
+import { LanguageSelection } from "components/LanguageSelection";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
 
   return (
     <main className=" min-h-screen flex  ">
-      <div className="  min-w-[28rem]  flex-shrink-0 pl-20 pt-8  space-y-12 ">
+      <div className="  min-w-[28rem]  flex-shrink-0 pl-20 pt-8  space-y-10 ">
         <img
           src="./Bershka_logo.svg"
           alt="Breshka"
@@ -29,7 +30,8 @@ export default function Home() {
           setSelectedCountry={setSelectedCountry}
         />
 
-        <div className="">
+        <LanguageSelection />
+        {/* <div className="">
           <p className="text-md font-bold mb-6">
             Select your language
           </p>
@@ -54,7 +56,7 @@ export default function Home() {
               FR
             </span>
           </div>
-        </div>
+        </div> */}
         <div className=" flex  gap-2">
           <span
             className={` block rounded-full border border-black w-5 h-5 cursor-pointer `}

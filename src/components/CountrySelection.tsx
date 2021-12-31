@@ -66,7 +66,7 @@ export const CountrySelection = ({
 
   return (
     <div>
-      <p className="text-md font-bold mb-6">
+      <p className="text-md font-extrabold mb-6">
         Select your location
       </p>
       <div className="flex gap-2 relative">

@@ -1,3 +1,4 @@
+import { CountrySelection } from "components/CountrySelection";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 export default function Home() {
@@ -17,43 +18,21 @@ export default function Home() {
             src="./Bershka_logo.svg"
             alt="Breshka"
             title="Bershka"
-            className="bg-blue-300 w-38 h-10 mb-10 "
+            className=" w-38 h-10 mb-10 "
           />
-          <div className=" ">
+          <CountrySelection />
+
+          <div>
             <p className="text-md font-bold mb-6">
-              Select your location
+              Select your language
             </p>
-
-            <div className=" rounded w-4/5 border border-black p-1 relative ">
-              <span className="font-apercu-light font-thin text-xs bg-white px-1 absolute bottom-8 left-4 ">
-                Market
-              </span>
-
-              <button className=" bg-indigo-400 flex p-1 w-full ">
-                <span className=" flex items-center w-full content-between ">
-                  <img
-                  src="./clipboard.svg"
-                  alt="location"
-                  title="location"
-                  className="w-6 h-3  bg-yellow-400"
-                />
-
-                  <span className="w-full bg-blue-600 text-left "> Canada</span>
-
-                </span>
-
-                <img src="./chevron-down.svg" alt="arrow"  className="bg-yellow-200  w-4 h-4"/>
-              </button>
-            </div>
           </div>
-          <div></div>
           <div></div>
         </div>
         <div
           className={` w-full  bg-cover bg-center bg-[url('https://static.bershka.net/4/static/itxwebstandard/images/worldwide/index.jpg?t=20211230023526')]   `}
         >
           {" "}
-          hekkii
         </div>
       </section>
     </>

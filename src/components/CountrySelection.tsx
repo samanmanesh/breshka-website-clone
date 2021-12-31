@@ -65,7 +65,7 @@ export const CountrySelection = ({
   };
 
   return (
-    <div>
+    <div >
       <p className="text-md font-extrabold mb-6">
         Select your location
       </p>

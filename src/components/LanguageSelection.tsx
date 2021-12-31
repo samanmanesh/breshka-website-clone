@@ -52,31 +52,3 @@ export const LanguageSelection = (
   );
 };
 
-{
-  /* <div className="">
-          <p className="text-md font-bold mb-6">
-            Select your language
-          </p>
-
-          <div className="flex gap-2">
-            <span
-              className={`btn-round ${
-                selectedLanguage
-                  ? "bg-black text-white"
-                  : ""
-              }`}
-            >
-              EN
-            </span>
-            <span className={`btn-round  `}>
-              PT
-            </span>
-            <span className={`btn-round  `}>
-              ES
-            </span>
-            <span className={`btn-round  `}>
-              FR
-            </span>
-          </div>
-        </div> */
-}

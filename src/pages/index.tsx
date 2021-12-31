@@ -30,17 +30,7 @@ export default function Home() {
         />
         <LanguageSelection />
 
-        <StoreSelection/>
-        {/* <div className=" flex gap-2">
-          <span
-            className={` block rounded-full border border-black w-5 h-5 cursor-pointer `}
-          >
-            {" "}
-          </span>
-          <p className=" font-apercu-semibold text-xs ">
-            Remember my selection
-          </p>
-        </div> */}
+        <StoreSelection />
 
         <button className=" py-3 px-14 rounded  bg-black text-white text-base hover:bg-gray-800">
           {selectedCountry ? "SAVE" : "GO!"}

@@ -113,21 +113,35 @@ export const CountrySelection = ({
                 )}
               </Listbox.Button>
 
-              <Listbox.Options className="bg-white drop-shadow-md absolute w-9/12 left-0 top-11 max-h-80 p-2 rounded overflow-auto ">
-                <input
-                  id="search-field"
-                  className="block  w-full rounded bg-gray-100 border-transparent py-2 pl-4 pr-1 text-gray-900 placeholder-gray-300 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
-                  placeholder="Search"
-                  type="search"
-                  name="search"
-                  value={search}
-                  onChange={(e) =>
-                    setSearch(e.target.value)
-                  }
-                  // onChange={}
-                  // onKeyDown={}
-                />
-                <div className="">
+              <Listbox.Options className="bg-white drop-shadow-md absolute w-9/12 left-0 top-11 p-2 pt-11 rounded overflow-hidden">
+                <div className="absolute top-2 left-2 right-2">
+                  <input
+                    id="search-field"
+                    className="block 
+                  w-full 
+                  rounded 
+                  bg-gray-100 
+                  border-transparent 
+                  py-2 
+                  pl-4 
+                  pr-1 
+                  text-gray-900 
+                  placeholder-gray-300 
+                  focus:outline-none 
+                  focus:placeholder-gray-400 
+                  focus:ring-0 
+                  focus:border-transparent 
+                  sm:text-sm"
+                    placeholder="Search"
+                    type="search"
+                    name="search"
+                    value={search}
+                    onChange={(e) =>
+                      setSearch(e.target.value)
+                    }
+                  />
+                </div>
+                <div className="overflow-auto max-h-64">
                   {searchResults.map(
                     (country) => (
                       <Listbox.Option

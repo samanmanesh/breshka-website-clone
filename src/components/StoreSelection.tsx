@@ -3,25 +3,30 @@ import { useState } from "react";
 import { Switch } from "@headlessui/react";
 interface Props {}
 
+import {
+  CheckIcon
+} from "@heroicons/react/solid";
+
 export const StoreSelection = (props: Props) => {
   let [enabled, setEnabled] = useState(false);
 
   return (
     <Switch.Group>
-      <div>
-        <Switch.Label className="mr-4 ">
+      <div className="flex flex-row-reverse items-center">
+        <Switch.Label className="ml-4 mr-auto">
           Enable notifications
         </Switch.Label>
         <Switch
           checked={enabled}
           onChange={setEnabled}
-          className={`${
+          className={`rounded-full border border-black w-5 h-5 cursor-pointer grid place-items-center
+           ${
             enabled
-              ? "bg-blue-600"
-              : "bg-gray-200"
+              ? "bg-emerald-400 border-emerald-400"
+              : ""
           } `}
         >
-          <div className="w-4 h-4" />
+          {enabled && <CheckIcon className="w-4 h-4 text-white" />}
         </Switch>
       </div>
     </Switch.Group>

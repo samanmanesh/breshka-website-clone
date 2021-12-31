@@ -156,7 +156,7 @@ export const CountrySelection = ({
                             ""
                           )}
                         </span>
-                        <span className="">
+                        <span className=" font-light text-xs  ">
                           {country.name}
                         </span>
                       </Listbox.Option>

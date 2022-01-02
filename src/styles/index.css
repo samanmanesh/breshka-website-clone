@@ -1,14 +1,14 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @font-face {
   font-family: "Apercu";
   src: url("/fonts/Apercu-Font/Apercu-Pro-Regular.otf");
-    
+
   font-style: normal;
   font-weight: 400;
-  font-display:swap ;
+  font-display: swap;
 }
 
 @font-face {
@@ -16,17 +16,15 @@
   src: url("/fonts/Apercu-Font/Apercu-Pro-light.otf");
   font-style: normal;
   font-weight: 300;
-  font-display:swap ;
+  font-display: swap;
 }
 
-@layer components{
-
+@layer components {
   .btn {
+    @apply py-1 px-1 rounded  bg-black text-white text-base ;
+  }
 
-  };
-
-
-  .btn-round{
+  .btn-round {
     @apply rounded-full border flex-shrink-0 w-10 h-10 grid place-content-center cursor-pointer;
   }
 }

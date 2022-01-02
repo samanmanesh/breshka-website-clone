@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React, { ReactElement } from "react";
-import { SearchIcon} from "@heroicons/react/solid";
-import { HeartIcon, ShoppingBagIcon, UserIcon } from "@heroicons/react/outline";
+import { HeartIcon, ShoppingBagIcon, UserIcon,SearchIcon } from "@heroicons/react/outline";
 import  Link  from 'next/link';
 
 interface Props {}
@@ -10,14 +9,15 @@ export default function TopBar({}: Props): ReactElement {
   const router = useRouter();
 
   return (
-    <div className="bg-white w-full py-2 px-8 flex content-around gap-4 item-center  ">
+    <div className="bg-white w-full py-3 px-8 flex place-content-between  ">
       {/* logo container */}
+      <section className="flex space-x-14 ">
       <div className=" w-20 p-1  ">
         <Link href={`/main/${router.query.gender ?? 'men'}`}>
           <svg
             version="1.1"
             viewBox="0 0 268.534 58.92"
-            className="logo svg-icon svg-fill"
+            className="logo svg-icon svg-fill cursor-pointer"
           >
             <path
               // pid="0"
@@ -28,8 +28,8 @@ export default function TopBar({}: Props): ReactElement {
       </div>
 
       {/** buttons */}
-      <div className="flex gap-2 font-extrabold  text-xs  ">
-        <Link href="women">
+      <div className="flex gap-4 font-bold  text-xs  ">
+        <Link href="/main/women">
         
         <button
           className={`  rounded py-1 px-2 hover:bg-black hover:text-white  ${
@@ -43,9 +43,9 @@ export default function TopBar({}: Props): ReactElement {
           WOMEN
         </button>
         </Link>
-        <Link href="men">
+        <Link href="/main/men">
         <button
-          className={`rounded py-1 px-2 hover:bg-black hover:text-white ${
+          className={`rounded py-1 px-3 hover:bg-black hover:text-white ${
             router.query.gender === "men"
               ? "bg-black text-white"
               : ""
@@ -56,10 +56,12 @@ export default function TopBar({}: Props): ReactElement {
         </Link>
       </div>
 
+          </section>
+          <section className="flex space-x-2">
       {/** Search container */}
-      <div className="flex  items-center justify-center text-xs font-bold ">
-        <SearchIcon className=" w-5 h-5 mx-2 " />
-        <span className=" w-44 border-black border-b">
+      <div className="flex  items-center justify-center text-xs font-medium ">
+        <SearchIcon className=" w-6 h-6 mx-2 "  />
+        <span className=" w-56 py-1 border-black border-b">
           Search
         </span>
       </div>
@@ -67,12 +69,13 @@ export default function TopBar({}: Props): ReactElement {
       {/** menu  container*/}
       <div className="flex">
         {/* profile */}
-        <UserIcon className=" w-5 h-5 mx-2 " />
+        <UserIcon className=" w-6 h-6 mx-2 " />
         {/* wishlist */}
-        <HeartIcon className=" w-5 h-5 mx-2 " />
+        <HeartIcon className=" w-6 h-6 mx-2 " />
         {/* shopping basket  */}
-        <ShoppingBagIcon className=" w-5 h-5 mx-2 " />
+        <ShoppingBagIcon className=" w-6 h-6 mx-2 " />
       </div>
+      </section>
     </div>
   );
 }

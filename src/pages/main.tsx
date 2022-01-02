@@ -1,9 +1,13 @@
+import AppLayout from "components/layout/AppLayout";
+
 export default function Home() {
   return (
     <>
-      <section className=" min-h-screen flex ">
-        main page
-      </section>
+      {/* <AppLayout> */}
+        <section className=" min-h-screen flex ">
+          main page
+        </section>
+      {/* </AppLayout> */}
     </>
   );
 }

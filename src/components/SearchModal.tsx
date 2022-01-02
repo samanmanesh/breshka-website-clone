@@ -56,6 +56,9 @@ export default function SearchModal({
               <Dialog.Overlay className="fixed inset-0" />
             </Transition.Child>
 
+            
+              
+            
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -66,12 +69,17 @@ export default function SearchModal({
               leaveTo="opacity-0 scale-100"
             >
               <div className=" w-full h-96  text-left   transform bg-white shadow-xl ">
+                
+                
                 <Dialog.Title
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
                   Payment successful
                 </Dialog.Title>
+                
+
+              
               </div>
             </Transition.Child>
           </div>

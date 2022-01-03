@@ -78,12 +78,18 @@ export default function TopBar({}: Props): ReactElement {
       </section>
       <section className="flex space-x-2">
         {/** Search container */}
-        <div className="flex  items-center justify-center text-xs font-medium cursor-pointer">
+        <button
+          type="button"
+          onClick={openModalSearch}
+          className=" flex text-left  items-center justify-center text-xs font-medium cursor-pointer"
+        >
+        
           <SearchIcon className=" w-6 h-6 mx-2 " />
           <span className=" w-56 py-1 border-black border-b">
             Search
           </span>
-        </div>
+
+        </button>
 
         {/** menu  container*/}
         <div className="flex">
@@ -97,19 +103,12 @@ export default function TopBar({}: Props): ReactElement {
             <HeartIcon className=" w-6 h-6 mx-2 cursor-pointer" />{" "}
           </button>
           {/* shopping basket  */}
+          
           <button>
             <ShoppingBagIcon className=" w-6 h-6 mx-2 cursor-pointer" />
           </button>
 
-          <div className=" inset-0 flex items-center justify-center">
-            <button
-              type="button"
-              onClick={openModalSearch}
-              className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-            >
-              Open dialog
-            </button>
-          </div>
+          
         </div>
       </section>
       <SearchModal

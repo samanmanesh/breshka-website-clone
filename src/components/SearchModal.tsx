@@ -32,18 +32,7 @@ const [search, setSearch] = useState("");
   };
 
   return (
-    <>
-      {/* <div className="fixed inset-0 flex items-center justify-center">
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          Open dialog
-        </button>
-      </div> */}
-
-      <Transition
+    <>      <Transition
         appear
         show={isOpen}
         as={Fragment}
@@ -66,14 +55,7 @@ const [search, setSearch] = useState("");
               <Dialog.Overlay className="fixed inset-0" />
             </Transition.Child>
 
-            {/* <div className=" w-full h-96 text-left transform bg-white shadow-xl -translate-y-full">
-              <Dialog.Title
-                as="h3"
-                className="text-lg font-medium leading-6 text-gray-900"
-              >
-                Payment successful!!
-              </Dialog.Title>
-            </div> */}
+            
 
             <Transition.Child
               as={Fragment}
@@ -84,9 +66,9 @@ const [search, setSearch] = useState("");
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-100 -translate-y-full"
             >
-              <div className=" w-full h-96 py-4 px-10 text-left transform bg-white shadow-xl  ">
+              <div className=" w-full h-96 py-4 px-10 text-left transform bg-white shadow-xl  flex-col ">
                 <section className="flex place-content-between">
-                  <div className=" w-20 p-1  ">
+                  <div className=" w-20 p-1 mb-16 ">
                     <Link
                       href={`/main/${
                         router.query.gender ??
@@ -111,15 +93,21 @@ const [search, setSearch] = useState("");
                   </span>
                 </section>
 
-                <div className="w-full">
+                <div className="w-full  grid place-items-center">
                   <input
                     type="search"
                     placeholder="What are you looking for?"
                     value={search}
                     onChange={searchEventHandler}
-                    className="w-3/4 text-[2.5rem] border-b border-black placeholder-gray-500 focus:outline-none"
+                    className="w-5/6 text-[2.3rem] border-b border-black placeholder-gray-500 focus:outline-none py-4"
                   />
                 </div>
+                <div className="px-28 py-8">
+                  <h3 className="font-bold">
+                    Most searched 
+                    </h3>
+
+                  </div>
               </div>
             </Transition.Child>
           </div>

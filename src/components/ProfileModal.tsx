@@ -49,31 +49,51 @@ export default function ProfileModal({
             <div className="absolute right-0 max-w-full">
               <Transition.Child
                 as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-100 translate-x-full"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-300"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-100 translate-x-full"
+                enter="transform transition ease-in-out duration-500 sm:duration-700"
+                enterFrom="translate-x-full"
+                enterTo="translate-x-0"
+                leave="transform transition ease-in-out duration-500 sm:duration-700"
+                leaveFrom="translate-x-0"
+                leaveTo="translate-x-full"
               >
-                <div className="min-h-screen  text-left transform bg-white shadow-xl  flex-col ">
-                  <span>
-                    <XIcon className="h-6 w-6 " />
-                  </span>
-
-                  <img
-                    src="/login-welcome-figure.png"
-                    className="w-32 h-auto"
-                  />
-                  <Dialog.Title>
-                    {" "}
-                    Log in or create an account
-                  </Dialog.Title>
-
-                  <form>
+                <div className="min-h-screen   transform bg-white shadow-xl   ">
+                  
+                  <button className=" h-24   ">
+                    <XIcon className="absolute h-6 w-6 ml-auto right-4 top-4 " />
+                  </button>
+                  <section className=" w-96 flex-col space-y-8  ">
+                    <img
+                      src="/login-welcome-figure.png"
+                      className="w-36 h-auto  mx-auto "
+                    />
+                    <Dialog.Title className=" font-extrabold text-xl">
+                      Log in or create an account
+                    </Dialog.Title>
                     
+                      <form className=" px-12   space-y-4">
+                        <input
+                          className="w-full h-10  p-4 border border-gray-300 rounded placeholder:font-light placeholder:text-sm "
+                          type="email"
+                          placeholder="Email"
+                        />
+                        <input
+                          className="w-full h-10 mb-4 p-3 border border-gray-300 placeholder:font-light placeholder:text-sm rounded"
+                          type="password"
+                          placeholder="Password"
+                        />
 
-                  </form>
+                        <div>
+                          
+                          Continue session
+                        </div>
+                        <span>
+                          Forgotten your password?
+                        </span>
+
+
+                      </form>
+                   
+                  </section>
                 </div>
               </Transition.Child>
             </div>

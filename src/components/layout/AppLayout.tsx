@@ -11,18 +11,16 @@ export default function AppLayout({
 }: Props): ReactElement {
   return (
     <div className="min-h-screen bg-green-200">
-      <div>
+      
         <TopBar />
-        <Sidebar />
+        {/* <Sidebar /> */}
 
-        <div className="md:pl-64">
-          <div className="mx-auto max-w-4xl">
+        
             {/* <TopBar /> */}
             {children}
-          </div>
-        </div>
+        
         {/* <Dashboard /> */}
-      </div>
+      
     </div>
   );
 }

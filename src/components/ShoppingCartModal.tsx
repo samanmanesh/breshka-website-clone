@@ -50,10 +50,10 @@ export default function ShoppingCartModal({
             <Dialog.Overlay className="fixed inset-0 bg-black/40" />
           </Transition.Child>
 
-          <div className="absolute inset-y-0 right-0 max-w-full">
+          <div className="fixed inset-y-0 right-0  ">
             <Transition.Child
               as={Fragment}
-              enter="sm:duration-700"
+              enter="sm:duration-700 transition ease-in-out  transform" 
               enterFrom="translate-x-full"
               enterTo="translate-x-0"
               leave="sm:duration-700"
@@ -72,16 +72,17 @@ export default function ShoppingCartModal({
                     src="/basket-figure.png"
                     className="w-44 h-auto mx-auto "
                   />
+                  <div>
                   <Dialog.Title className=" font-extrabold text-xl">
                     Empty basket
                   </Dialog.Title>
 
-                  <p className="font-light text-sm  ">
+                  <p className="font-light text-sm  py-2 px-10">
                     Your basket is still empty,
                     discover everything we’ve got
                     for you
                   </p>
-
+                  </div>
                   <button
                     className="w-32 p-3 border border-gray-300 rounded bg-black text-white hover:bg-gray-800"
                     type="submit"

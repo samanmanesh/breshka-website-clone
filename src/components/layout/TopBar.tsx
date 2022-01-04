@@ -121,10 +121,10 @@ export default function TopBar({}: Props): ReactElement {
             <UserIcon className=" w-6 h-6 mx-2 cursor-pointer" />
           </button>
           {/* wishlist */}
-          <button>
-            {" "}
+          <Link href={`/main/${router.query.gender}/wishlist`}>
+            
             <HeartIcon className=" w-6 h-6 mx-2 cursor-pointer" />
-          </button>
+          </Link>
           {/* shopping basket  */}
 
           <button 

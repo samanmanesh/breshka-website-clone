@@ -28,3 +28,8 @@
     @apply rounded-full border flex-shrink-0 w-10 h-10 grid place-content-center cursor-pointer;
   }
 }
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

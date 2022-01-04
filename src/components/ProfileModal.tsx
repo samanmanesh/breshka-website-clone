@@ -29,17 +29,17 @@ export default function ProfileModal({
   return (
     <>
       {" "}
-      <Transition
+      <Transition.Root
         appear
         show={isOpen}
         as={Fragment}
       >
         <Dialog
           as="div"
-          className="fixed inset-0 z-10 overflow-y-auto"
+          className="fixed inset-0 z-10 overflow-hidden"
           onClose={closeModal}
         >
-          <div className="min-h-screen  text-center bg-gray-900/40 ">
+          <div className="min-h-screen  text-center  absolute overflow-hidden ">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -49,17 +49,17 @@ export default function ProfileModal({
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0" />
+              <Dialog.Overlay className="fixed inset-0 bg-gray-900/40" />
             </Transition.Child>
-            <div className="absolute right-0 max-w-full ">
+            <div className="fixed right-0 max-w-full ">
               <Transition.Child
-                as={Fragment}
-                enter="transform transition ease-in-out duration-500 sm:duration-700"
-                enterFrom="translate-x-full"
-                enterTo="translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-700"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
+                 as={Fragment}
+                 enter="sm:duration-700 transition ease-in-out  transform" 
+                 enterFrom="translate-x-full"
+                 enterTo="translate-x-0"
+                 leave="sm:duration-700"
+                 leaveFrom="translate-x-0"
+                 leaveTo="translate-x-full"
               >
                 <div className="min-h-screen   transform bg-white shadow-xl   ">
                   <button onClick={closeModal} className=" h-24   ">
@@ -133,7 +133,7 @@ export default function ProfileModal({
             </div>
           </div>
         </Dialog>
-      </Transition>
+      </Transition.Root>
     </>
   );
 }

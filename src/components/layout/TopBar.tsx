@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import SearchModal from "components/SearchModal";
 import ProfileModal from "components/ProfileModal";
+import ShoppingCartModal from "components/ShoppingCartModal";
+
 
 interface Props {}
 
@@ -19,6 +21,8 @@ export default function TopBar({}: Props): ReactElement {
   const [searchIsOpen, setSearchIsOpen] =
     useState(false);
   const [profileIsOpen, setProfileIsOpen] =
+    useState(false);
+  const [shoppingCartIsOpen, setShoppingCartIsOpen] =
     useState(false);
   const router = useRouter();
 
@@ -35,6 +39,13 @@ export default function TopBar({}: Props): ReactElement {
 
   function openModalProfile() {
     setProfileIsOpen(true);
+  }
+  function closeModalShoppingCart() {
+    setShoppingCartIsOpen(false);
+  }
+
+  function openModalShoppingCart() {
+    setShoppingCartIsOpen(true);
   }
 
   return (
@@ -112,11 +123,14 @@ export default function TopBar({}: Props): ReactElement {
           {/* wishlist */}
           <button>
             {" "}
-            <HeartIcon className=" w-6 h-6 mx-2 cursor-pointer" />{" "}
+            <HeartIcon className=" w-6 h-6 mx-2 cursor-pointer" />
           </button>
           {/* shopping basket  */}
 
-          <button>
+          <button 
+          type="button"
+          onClick={openModalShoppingCart}
+          >
             <ShoppingBagIcon className=" w-6 h-6 mx-2 cursor-pointer" />
           </button>
         </div>
@@ -130,6 +144,12 @@ export default function TopBar({}: Props): ReactElement {
       isOpen={profileIsOpen} 
       closeModal={closeModalProfile} 
         openModal={openModalProfile}/>     
+      
+      <ShoppingCartModal
+        isOpen={shoppingCartIsOpen} 
+        closeModal={closeModalShoppingCart} 
+          openModal={openModalShoppingCart}
+      />
       
     </div>
   );

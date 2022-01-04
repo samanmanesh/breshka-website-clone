@@ -1,11 +1,15 @@
 import { Fragment, useState } from "react";
 import {
   Dialog,
+  Switch,
   Transition,
 } from "@headlessui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { XIcon } from "@heroicons/react/outline";
+import {
+  CheckIcon,
+  XIcon,
+} from "@heroicons/react/outline";
 
 interface Props {}
 
@@ -16,6 +20,7 @@ export default function ProfileModal({
 }) {
   const router = useRouter();
   const [search, setSearch] = useState("");
+  let [enabled, setEnabled] = useState(false);
 
   const searchEventHandler = (e) => {
     setSearch(e.target.value);
@@ -34,7 +39,7 @@ export default function ProfileModal({
           className="fixed inset-0 z-10 overflow-y-auto"
           onClose={closeModal}
         >
-          <div className="min-h-screen  text-center ">
+          <div className="min-h-screen  text-center bg-gray-900/40 ">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -46,7 +51,7 @@ export default function ProfileModal({
             >
               <Dialog.Overlay className="fixed inset-0" />
             </Transition.Child>
-            <div className="absolute right-0 max-w-full">
+            <div className="absolute right-0 max-w-full ">
               <Transition.Child
                 as={Fragment}
                 enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -57,9 +62,8 @@ export default function ProfileModal({
                 leaveTo="translate-x-full"
               >
                 <div className="min-h-screen   transform bg-white shadow-xl   ">
-                  
-                  <button className=" h-24   ">
-                    <XIcon className="absolute h-6 w-6 ml-auto right-4 top-4 " />
+                  <button onClick={closeModal} className=" h-24   ">
+                    <XIcon className="absolute h-6 w-6 ml-auto right-6 top-4 " />
                   </button>
                   <section className=" w-96 flex-col space-y-8  ">
                     <img
@@ -69,30 +73,60 @@ export default function ProfileModal({
                     <Dialog.Title className=" font-extrabold text-xl">
                       Log in or create an account
                     </Dialog.Title>
-                    
-                      <form className=" px-12   space-y-4">
-                        <input
-                          className="w-full h-10  p-4 border border-gray-300 rounded placeholder:font-light placeholder:text-sm "
-                          type="email"
-                          placeholder="Email"
-                        />
-                        <input
-                          className="w-full h-10 mb-4 p-3 border border-gray-300 placeholder:font-light placeholder:text-sm rounded"
-                          type="password"
-                          placeholder="Password"
-                        />
 
+                    <form className=" px-12   space-y-8">
+                      <input
+                        className="w-full h-10  p-4 border border-gray-300 rounded placeholder:font-light placeholder:text-sm "
+                        type="email"
+                        placeholder="Email"
+                      />
+                      <input
+                        className="w-full h-10 mb-4 p-3 border border-gray-300 placeholder:font-light placeholder:text-sm rounded"
+                        type="password"
+                        placeholder="Password"
+                      />
+
+                      <div className="flex justify-between">
                         <div>
-                          
-                          Continue session
+                          <Switch.Group>
+                            <div className="flex flex-row-reverse items-center">
+                              <Switch.Label className="ml-1 mr-auto font-light text-sm ">
+                                Continue session
+                              </Switch.Label>
+                              <Switch
+                                checked={enabled}
+                                onChange={
+                                  setEnabled
+                                }
+                                className={`rounded-full border border-gray-400 w-5 h-5 cursor-pointer grid place-items-center
+                                              ${
+                                                enabled
+                                                  ? "bg-emerald-400 border-emerald-400"
+                                                  : ""
+                                              } `}
+                              >
+                                {enabled && (
+                                  <CheckIcon className="w-4 h-4 text-white" />
+                                )}
+                              </Switch>
+                            </div>
+                          </Switch.Group>
                         </div>
-                        <span>
+                        <span className="font-bold text-sm">
                           Forgotten your password?
                         </span>
+                      </div>
 
-
-                      </form>
-                   
+                      <button
+                        className="w-full p-3 border border-gray-300 rounded bg-black text-white hover:bg-gray-800"
+                        type="submit"
+                      >
+                        LOG IN
+                      </button>
+                    </form>
+                    <p
+                    className="font-light text-sm"
+                    >Don't have an account? <strong className="font-bold">Register</strong></p>
                   </section>
                 </div>
               </Transition.Child>

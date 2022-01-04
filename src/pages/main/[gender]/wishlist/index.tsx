@@ -4,18 +4,19 @@ interface Props {}
 
 const WishList = (props: Props) => {
   return (
-    <div className="bg-red-300 w-full h-screen">
-      <h1 className="font-bold text-xl px-9 py-6">
-        My favorites
+    <div className=" w-full  space-y-40 flex-grow">
+      <h1 className="font-semibold text-xl px-9 py-6 ">
+        My favourites
       </h1>
-      <section className="flex-col place-items-center  ">
+      <section className="flex-col  text-center   ">
+        
         <img
           src="/wishlist-figure.png"
-          className=" w-36 h-auto"
+          className=" w-48 h-48 mx-auto"
         />
-        <h3>You don’t have any favorites</h3>
-        <p> Did you know we update our collection every week?</p>
-        <button> SEE WHAT'S NEW </button>
+        <h3 className="font-bold">You don’t have any favorites</h3>
+        <p className="  py-2 mb-6 text-sm "> Did you know we update our collection every <br/> week?</p>
+        <button className="btn p-3"> SEE WHAT'S NEW </button>
       </section>
     </div>
   );

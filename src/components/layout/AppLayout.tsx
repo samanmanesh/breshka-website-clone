@@ -10,7 +10,7 @@ export default function AppLayout({
   children,
 }: Props): ReactElement {
   return (
-    <div className="min-h-screen bg-green-200">
+    <div className="min-h-screen flex flex-col ">
       
         <TopBar />
         {/* <Sidebar /> */}

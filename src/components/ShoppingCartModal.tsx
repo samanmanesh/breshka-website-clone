@@ -47,7 +47,7 @@ export default function ShoppingCartModal({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-black/40" />
+            <Dialog.Overlay className="fixed inset-0 bg-gray-900/40" />
           </Transition.Child>
 
           <div className="fixed inset-y-0 right-0  ">

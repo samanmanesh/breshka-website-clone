@@ -11,19 +11,30 @@ import {
 } from "@heroicons/react/outline";
 import Link from "next/link";
 import SearchModal from "components/SearchModal";
+import ProfileModal from "components/ProfileModal";
 
 interface Props {}
 
 export default function TopBar({}: Props): ReactElement {
-  let [isOpen, setIsOpen] = useState(true);
+  const [searchIsOpen, setSearchIsOpen] =
+    useState(false);
+  const [profileIsOpen, setProfileIsOpen] =
+    useState(false);
   const router = useRouter();
 
   function closeModalSearch() {
-    setIsOpen(false);
+    setSearchIsOpen(false);
   }
 
   function openModalSearch() {
-    setIsOpen(true);
+    setSearchIsOpen(true);
+  }
+  function closeModalProfile() {
+    setProfileIsOpen(false);
+  }
+
+  function openModalProfile() {
+    setProfileIsOpen(true);
   }
 
   return (
@@ -83,18 +94,19 @@ export default function TopBar({}: Props): ReactElement {
           onClick={openModalSearch}
           className=" flex text-left  items-center justify-center text-xs font-medium cursor-pointer"
         >
-        
           <SearchIcon className=" w-6 h-6 mx-2 " />
           <span className=" w-56 py-1 border-black border-b">
             Search
           </span>
-
         </button>
 
         {/** menu  container*/}
         <div className="flex">
           {/* profile */}
-          <button>
+          <button
+          type="button"
+          onClick={openModalProfile}
+          >
             <UserIcon className=" w-6 h-6 mx-2 cursor-pointer" />
           </button>
           {/* wishlist */}
@@ -103,19 +115,22 @@ export default function TopBar({}: Props): ReactElement {
             <HeartIcon className=" w-6 h-6 mx-2 cursor-pointer" />{" "}
           </button>
           {/* shopping basket  */}
-          
+
           <button>
             <ShoppingBagIcon className=" w-6 h-6 mx-2 cursor-pointer" />
           </button>
-
-          
         </div>
       </section>
       <SearchModal
-        isOpen={isOpen}
+        isOpen={searchIsOpen}
         closeModal={closeModalSearch}
         openModal={openModalSearch}
       />
+      <ProfileModal 
+      isOpen={profileIsOpen} 
+      closeModal={closeModalProfile} 
+        openModal={openModalProfile}/>     
+      
     </div>
   );
 }

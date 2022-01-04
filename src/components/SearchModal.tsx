@@ -16,7 +16,7 @@ export default function SearchModal({
 }) {
   const router = useRouter();
   // let [isOpen, setIsOpen] = useState(true);
-const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
   // function closeModal() {
   //   setIsOpen(false);
   // }
@@ -25,14 +25,14 @@ const [search, setSearch] = useState("");
   //   setIsOpen(true);
   // }
 
-  const searchEventHandler = (e) => 
-  {
-    
+  const searchEventHandler = (e) => {
     setSearch(e.target.value);
   };
 
   return (
-    <>      <Transition
+    <>
+      {" "}
+      <Transition
         appear
         show={isOpen}
         as={Fragment}
@@ -55,8 +55,6 @@ const [search, setSearch] = useState("");
               <Dialog.Overlay className="fixed inset-0" />
             </Transition.Child>
 
-            
-
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -66,7 +64,7 @@ const [search, setSearch] = useState("");
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-100 -translate-y-full"
             >
-              <div className=" w-full h-96 py-4 px-10 text-left transform bg-white shadow-xl  flex-col ">
+              <div className=" w-full h-96 py-4 px-8 text-left transform bg-white shadow-xl  flex-col ">
                 <section className="flex place-content-between">
                   <div className=" w-20 p-1 mb-16 ">
                     <Link
@@ -87,9 +85,12 @@ const [search, setSearch] = useState("");
                       </svg>
                     </Link>
                   </div>
-
                   <span>
-                    <XIcon className="h-6 w-6 " />
+                    <button
+                      onClick={closeModal}
+                    >
+                      <XIcon className="h-6 w-6 " />
+                    </button>
                   </span>
                 </section>
 
@@ -104,10 +105,9 @@ const [search, setSearch] = useState("");
                 </div>
                 <div className="px-28 py-8">
                   <h3 className="font-bold">
-                    Most searched 
-                    </h3>
-
-                  </div>
+                    Most searched
+                  </h3>
+                </div>
               </div>
             </Transition.Child>
           </div>

@@ -16,7 +16,6 @@ import SearchModal from "components/SearchModal";
 import ProfileModal from "components/ProfileModal";
 import ShoppingCartModal from "components/ShoppingCartModal";
 import useScrollPosition from "../../hooks/useScrollPosition";
-import { Transition } from "@headlessui/react";
 import getTitleName from "utils/getTitleName";
 import isClient from "utils/isClient";
 
@@ -75,7 +74,7 @@ export default function TopBar({}: Props): ReactElement {
   }, [router]);
 
   return (
-    <div className="fixed top-0 inset-x-0 w-full py-6 px-8">
+    <div className="fixed top-0 inset-x-0 w-full py-5 px-8">
       <nav className="w-full flex place-content-between relative z-10">
         {/* Logo container */}
         {showHamburgerMenu ? (
@@ -132,7 +131,6 @@ export default function TopBar({}: Props): ReactElement {
         <section className="flex space-x-2 bg-white">
           <button
             type="button"
-            onClick={openModalSearch}
             className=" flex text-left  items-center justify-center text-xs font-medium cursor-pointer"
           >
             <SearchIcon className="w-6 h-6 mx-2" />
@@ -167,20 +165,10 @@ export default function TopBar({}: Props): ReactElement {
           </div>
         </section>
       </nav>
-      {/* <Transition
-        show={showHamburgerMenu}
-        enter="transition duration-75"
-        enterFrom="left-8 top-20"
-        enterTo="left-16 top-10"
-        leave="transition duration-150"
-        leaveFrom="left-16 top-10"
-        leaveTo="left-8 top-20"
-      >
-      </Transition> */}
       <h1
         className={`absolute font-semibold tracking-tighter transition-all duration-300 capitalize ${
           showHamburgerMenu
-            ? "left-20 top-[1.35rem] text-lg"
+            ? "left-20 top-[1.1rem] text-lg"
             : "left-8 top-20 text-xl"
         }`}
       >

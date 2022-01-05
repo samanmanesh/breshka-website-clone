@@ -58,13 +58,19 @@ export default function TopBar({}: Props): ReactElement {
   }
 
   // const onMain = router.pathname === '/main/[gender]'
+  const onMain = useMemo (()=>{
+   const route= router.pathname === '/main/[gender]';
+    return route;
+  },[router] );
 
-  const showHamburgerMenu = useMemo(
-    () => {
-      return scrollPosition > 30
-    },
-    [scrollPosition]
-  );
+  const showHamburgerMenu = useMemo(() => {
+    // if (!isClient()) return "";
+    // const path = window.location.pathname;
+    // console.debug("path",path);
+    
+    return (scrollPosition > 30 && (!onMain));
+    
+  }, [scrollPosition]);
 
   const title = useMemo(() => {
     if (!isClient()) return "";
@@ -172,7 +178,8 @@ export default function TopBar({}: Props): ReactElement {
             : "left-8 top-20 text-xl"
         }`}
       >
-        {title}
+        {!onMain &&
+        title}
       </h1>
 
       <SearchModal

@@ -6,7 +6,7 @@ interface Props {
 
 export default function Gender({}: Props): ReactElement {
   return (
-    <div>
+    <div className="" style={{height: '200vh'}}>
       Gender hi
  
 

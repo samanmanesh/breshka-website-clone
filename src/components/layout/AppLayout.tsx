@@ -16,12 +16,13 @@ export default function AppLayout({
         <TopBar />
         {/* <Sidebar /> */}
         <Sidebar />
-        
+
+      <main className="min-h-screen pt-24">{children}</main>
             {/* <TopBar /> */}
-            {children}
+            
         
         {/* <Dashboard /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

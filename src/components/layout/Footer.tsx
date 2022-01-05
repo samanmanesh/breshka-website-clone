@@ -12,7 +12,7 @@ const footerContent = [
 export const Footer = (props: Props) => {
   return (
     <div className="mx-16 p-4 border-t flex   justify-between">
-      <ul  className="flex justify-around w-1/2 list-disc">
+      <ul className="flex justify-around w-1/2 list-disc">
         {footerContent.map((item, index) => {
           return (
             <li
@@ -20,16 +20,19 @@ export const Footer = (props: Props) => {
               key={index}
             >
               {item}
-              
             </li>
           );
         })}
-        
       </ul>
       <div className="space-x-4 text-sm ">
-        <span className="font-semibold"> Canada | English</span>
-        <span className="text-gray-400"> &copy;2020 Breshka</span>
-
+        <span className="font-semibold">
+          {" "}
+          Canada | English
+        </span>
+        <span className="text-gray-400">
+          {" "}
+          &copy;2020 Breshka
+        </span>
       </div>
     </div>
   );

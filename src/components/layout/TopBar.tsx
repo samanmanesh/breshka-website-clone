@@ -57,19 +57,13 @@ export default function TopBar({}: Props): ReactElement {
     setShoppingCartIsOpen(true);
   }
 
-  // const onMain = router.pathname === '/main/[gender]'
   const onMain = useMemo (()=>{
    const route= router.pathname === '/main/[gender]';
     return route;
   },[router] );
 
   const showHamburgerMenu = useMemo(() => {
-    // if (!isClient()) return "";
-    // const path = window.location.pathname;
-    // console.debug("path",path);
-    
     return (scrollPosition > 30 && (!onMain));
-    
   }, [scrollPosition]);
 
   const title = useMemo(() => {

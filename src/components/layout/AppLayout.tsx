@@ -11,12 +11,11 @@ export default function AppLayout({
   children,
 }: Props): ReactElement {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className=" min-h-screen flex flex-col justify-between">
       
         <TopBar />
+        
         {/* <Sidebar /> */}
-        <Sidebar />
-
       <main className="min-h-screen pt-24">{children}</main>
             {/* <TopBar /> */}
             

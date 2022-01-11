@@ -25,15 +25,16 @@ export default function Gender({}: Props): ReactElement {
       <div>
         <section>
         {!subscribed ? (
-          <div>
-            <h1>Subscribe to our newsletter</h1>
-            <p>
+          <div className="text-center p-20 flex flex-col ">
+            <h1 className="text-[2.3rem] font-bold">Subscribe to our newsletter</h1>
+            <p className=" font-light  mb-8   ">
               {" "}
               Be the first to get the latest new
               about trends, promotions and mush
               more!
             </p>
             <input
+            className=" w-3/12 h-10 mb-6 p-3 border border-gray-300 placeholder:font-light placeholder:text-sm rounded mx-auto"
               type="email"
               placeholder="Enter your email address"
             />
@@ -59,6 +60,10 @@ export default function Gender({}: Props): ReactElement {
           </div>
         )}
         </section>
+        <section>
+
+
+          </section>
       </div>
     </div>
   );

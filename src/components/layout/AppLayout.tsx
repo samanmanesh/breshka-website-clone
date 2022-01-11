@@ -20,7 +20,7 @@ export default function AppLayout({
             
         
         {/* <Dashboard /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

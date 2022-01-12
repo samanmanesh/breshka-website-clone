@@ -16,7 +16,7 @@ export default function AppLayout({
         <TopBar />
         
         {/* <Sidebar /> */}
-      <main className="min-h-screen pt-24">{children}</main>
+      <main className="min-h-screen ">{children}</main>
             
         
         {/* <Dashboard /> */}

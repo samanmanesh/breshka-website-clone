@@ -33,7 +33,7 @@ const WishList = (props: Props) => {
       </section>
 
       {/*Footer */}
-      <div className="mx-16 p-4 border-t flex   justify-between">
+      {/* <div className="mx-16 p-4 border-t flex   justify-between">
         <ul className="flex justify-around w-1/2 list-disc">
           {footerContent.map((item, index) => {
             return (
@@ -56,7 +56,7 @@ const WishList = (props: Props) => {
             &copy;2020 Breshka
           </span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

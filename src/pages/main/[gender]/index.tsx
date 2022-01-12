@@ -48,7 +48,7 @@ export default function Gender({}: Props): ReactElement {
   const [subscribed, setSubscribed] =
     useState(false);
   return (
-    <div className="" style={{ height: "200vh" }}>
+    <div className="min-h-180">
       <div
         className={` w-full  bg-cover bg-center ${
           router.asPath === "/main/women"
@@ -115,52 +115,55 @@ export default function Gender({}: Props): ReactElement {
             </div>
           )}
         </section>
-        <section className=" border-t mx-16 py-8 flex space-x-6">
-          <div className=" ">
-            <h3 className="font-medium tracking-tighter text-medium mb-8">
-              Can we help you?
-            </h3>
-            <div className="flex space-x-2">
-              <MailIcon className="w-5 " />
-              <span className="text-sm p-y-auto ">
-                Send email
-              </span>{" "}
+
+        <section className="border-t mx-16 py-8 flex justify-between flex-wrap overflow-hidden">
+          <div className="flex   pr-40 grow  ">
+            <div className="min-w-max pr-2">
+              <h3 className="font-medium tracking-tighter text-medium mb-8">
+                Can we help you?
+              </h3>
+              <div className="flex space-x-2">
+                <MailIcon className="w-5 " />
+                <span className="text-sm p-y-auto ">
+                  Send email
+                </span>{" "}
+              </div>
+              <p className="font-base text-xs text-gray-300 ">
+                We'll reply asap
+              </p>
             </div>
-            <p className="font-base text-xs text-gray-300 ">
-              We'll reply asap
-            </p>
+            <div className="w-full flex justify-evenly min-w-max">
+              {contactData.map((data) => {
+                return (
+                  <div className="pr-2">
+                    <h3 className="font-medium tracking-tighter text-medium mb-6">
+                      {data.title}
+                    </h3>
+                    <ul className="font-light  text-sm space-y-3">
+                      {data.list.map((item) => {
+                        return (
+                          <li className="flex cursor-pointer">
+                            {item}
+                            {item ===
+                              "Join Life" && (
+                              <img
+                                src={
+                                  "https://static.bershka.net/4/static/itxwebstandard/images/footer/joinlife.png?ts=20220112024026"
+                                }
+                                alt="green leaf"
+                                className="pl-2 pt-1"
+                              />
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div className="w-full flex justify-evenly">
-            {contactData.map((data) => {
-              return (
-                <div className="">
-                  <h3 className="font-medium tracking-tighter text-medium mb-6">
-                    {data.title}
-                  </h3>
-                  <ul className="font-light  text-sm space-y-3">
-                    {data.list.map((item) => {
-                      return (
-                        <li className="flex ">
-                          {item}
-                          {item ===
-                            "Join Life" && (
-                            <img
-                              src={
-                                "https://static.bershka.net/4/static/itxwebstandard/images/footer/joinlife.png?ts=20220112024026"
-                              }
-                              alt="green leaf"
-                              className="pl-2 pt-1"
-                            />
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-          <div className="flex flex-wrap" >
+          <div className="flex flex-wrap">
             <img
               alt="instagram"
               src={
@@ -174,7 +177,6 @@ export default function Gender({}: Props): ReactElement {
                 "https://static.bershka.net/4/static/itxwebstandard/images/footer/facebook_desktop.svg?ts=20220112024026"
               }
               className=" w-10 h-10 rounded-full "
-
             />
             <img
               alt="twitter"
@@ -182,7 +184,6 @@ export default function Gender({}: Props): ReactElement {
                 "https://static.bershka.net/4/static/itxwebstandard/images/footer/twitter_desktop.svg?ts=20220112024026"
               }
               className="w-10 h-10 rounded-full"
-
             />
             <img
               alt="tiktok"
@@ -190,7 +191,6 @@ export default function Gender({}: Props): ReactElement {
                 "https://static.bershka.net/4/static/itxwebstandard/images/footer/tiktok_desktop.svg?ts=20220112024026"
               }
               className="w-10 h-10 rounded-full  "
-
             />
             <img
               alt="snapchat"
@@ -198,13 +198,11 @@ export default function Gender({}: Props): ReactElement {
                 "https://static.bershka.net/4/static/itxwebstandard/images/footer/snapchat_desktop.svg?ts=20220112024026"
               }
               className="w-10 h-10 rounded-full  "
-
             />
             <img
               alt="youtube"
               src={
                 "https://static.bershka.net/4/static/itxwebstandard/images/footer/youtube_desktop.svg?ts=20220112024026"
-              
               }
               className="w-10 h-10 rounded-full  "
             />
@@ -223,18 +221,6 @@ export default function Gender({}: Props): ReactElement {
               className="w-10 h-10 rounded-full  "
             />
           </div>
-          {/* <div><h3 className="font-medium tracking-tighter text-medium mb-6">
-          We are Breshka
-            </h3>
-            <ul className="font-light tracking-tighter text-sm space-y-3">
-              <li></li>
-              <li>About Breshka</li>
-              <li>Join Life  <img src={"https://static.bershka.net/4/static/itxwebstandard/images/footer/joinlife.png?ts=20220112024026"} alt="green leaf" /></li>
-              <li>Returns</li>
-              <li>Guest purchase</li>
-              <li>Electronic receipt</li>
-            </ul></div>
-          <div></div> */}
         </section>
       </div>
     </div>

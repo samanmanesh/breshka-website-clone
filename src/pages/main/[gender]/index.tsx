@@ -7,10 +7,41 @@ import React, {
 
 interface Props {}
 
-const contactData=[{title: "Help", list:["Shop online", "Payment", "Delivery", "Returns", "Guest purchase", "Electronic receipt"]},
-{titel:"We are Breshak", list:["About Breshka","Join Life", "Work with us", "Press"]}, 
-{title: "You might be interested in" ,list:["Sweaters and cardigans", "Jakets and coats", "Sweatshirts and hoodies", "Trousuers", "Waistcoats", "Jacets and coats", "Sweatshirts", "SALE"]
-}]
+const contactData = [
+  {
+    title: "Help",
+    list: [
+      "Shop online",
+      "Payment",
+      "Delivery",
+      "Returns",
+      "Guest purchase",
+      "Electronic receipt",
+    ],
+  },
+  {
+    title: "We are Breshak",
+    list: [
+      "About Breshka",
+      "Join Life",
+      "Work with us",
+      "Press",
+    ],
+  },
+  {
+    title: "You might be interested in",
+    list: [
+      "Sweaters and cardigans",
+      "Jakets and coats",
+      "Sweatshirts and hoodies",
+      "Trousuers",
+      "Waistcoats",
+      "Jacets and coats",
+      "Sweatshirts",
+      "SALE",
+    ],
+  },
+];
 
 export default function Gender({}: Props): ReactElement {
   const router = useRouter();
@@ -90,33 +121,46 @@ export default function Gender({}: Props): ReactElement {
               Can we help you?
             </h3>
             <div className="flex space-x-2">
-            <MailIcon className="w-5 " />
-            <span className="text-sm p-y-auto ">Send email</span>{" "}
+              <MailIcon className="w-5 " />
+              <span className="text-sm p-y-auto ">
+                Send email
+              </span>{" "}
             </div>
-            <p className="font-base text-xs text-gray-300 ">We'll reply asap</p>
+            <p className="font-base text-xs text-gray-300 ">
+              We'll reply asap
+            </p>
           </div>
-          <div>
-
-          {contactData.map( data => {return(
-
-    <h3 className="font-medium tracking-tighter text-medium mb-6">
-{data.title}
-</h3>
-<ul className="font-light tracking-tighter text-sm space-y-3">
-  {data.list.foreach(element =>
-    
-  <li>element</li>
-    )}
-
-</ul>
-        
-
-
-          ))
-
-}}
-            
+          <div className="w-full flex justify-evenly">
+            {contactData.map((data) => {
+              return (
+                <div className="">
+                  <h3 className="font-medium tracking-tighter text-medium mb-6">
+                    {data.title}
+                  </h3>
+                  <ul className="font-light  text-sm space-y-3">
+                    {data.list.map((item) => {
+                      return (
+                        <li className="flex ">
+                          {item}
+                          {item ===
+                            "Join Life" && (
+                            <img
+                              src={
+                                "https://static.bershka.net/4/static/itxwebstandard/images/footer/joinlife.png?ts=20220112024026"
+                              }
+                              alt="green leaf"
+                              className="pl-2 pt-1"
+                            />
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
+          <div>Icons</div>
           {/* <div><h3 className="font-medium tracking-tighter text-medium mb-6">
           We are Breshka
             </h3>

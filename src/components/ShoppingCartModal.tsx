@@ -73,7 +73,7 @@ export default function ShoppingCartModal({
                     className="w-44 h-auto mx-auto "
                   />
                   <div>
-                  <Dialog.Title className=" font-extrabold text-xl">
+                  <Dialog.Title className=" -extrabold text-xl">
                     Empty basket
                   </Dialog.Title>
 

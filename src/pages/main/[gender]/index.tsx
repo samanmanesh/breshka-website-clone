@@ -160,7 +160,69 @@ export default function Gender({}: Props): ReactElement {
               );
             })}
           </div>
-          <div>Icons</div>
+          <div className="flex flex-wrap" >
+            <img
+              alt="instagram"
+              src={
+                "https://static.bershka.net/4/static/itxwebstandard/images/footer/instagram_desktop.svg?ts=20220112024026"
+              }
+              className="w-10 h-10 rounded-full"
+            />
+            <img
+              alt="facebook"
+              src={
+                "https://static.bershka.net/4/static/itxwebstandard/images/footer/facebook_desktop.svg?ts=20220112024026"
+              }
+              className=" w-10 h-10 rounded-full "
+
+            />
+            <img
+              alt="twitter"
+              src={
+                "https://static.bershka.net/4/static/itxwebstandard/images/footer/twitter_desktop.svg?ts=20220112024026"
+              }
+              className="w-10 h-10 rounded-full"
+
+            />
+            <img
+              alt="tiktok"
+              src={
+                "https://static.bershka.net/4/static/itxwebstandard/images/footer/tiktok_desktop.svg?ts=20220112024026"
+              }
+              className="w-10 h-10 rounded-full  "
+
+            />
+            <img
+              alt="snapchat"
+              src={
+                "https://static.bershka.net/4/static/itxwebstandard/images/footer/snapchat_desktop.svg?ts=20220112024026"
+              }
+              className="w-10 h-10 rounded-full  "
+
+            />
+            <img
+              alt="youtube"
+              src={
+                "https://static.bershka.net/4/static/itxwebstandard/images/footer/youtube_desktop.svg?ts=20220112024026"
+              
+              }
+              className="w-10 h-10 rounded-full  "
+            />
+            <img
+              alt="pinterest"
+              src={
+                "https://static.bershka.net/4/static/itxwebstandard/images/footer/pinterest_desktop.svg?ts=20220112024026"
+              }
+              className="w-10 h-10 rounded-full  "
+            />
+            <img
+              alt="spotify"
+              src={
+                "https://static.bershka.net/4/static/itxwebstandard/images/footer/spotify_desktop.svg?ts=20220112024026"
+              }
+              className="w-10 h-10 rounded-full  "
+            />
+          </div>
           {/* <div><h3 className="font-medium tracking-tighter text-medium mb-6">
           We are Breshka
             </h3>

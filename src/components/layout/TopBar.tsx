@@ -67,7 +67,7 @@ export default function TopBar({}: Props): ReactElement {
   }
 
   function openSideBar() {
-    setSideBarIsOpen(true);
+    setSideBarIsOpen(false);
 
   }
 
@@ -90,7 +90,7 @@ export default function TopBar({}: Props): ReactElement {
   return (
     <div className="fixed top-0 inset-x-0 w-full py-5 px-8">
       <nav className="w-full flex place-content-between relative ">
-        <BreshkaNav showHamburgerMenu={showHamburgerMenu} onMain={onMain} />
+        <BreshkaNav showHamburgerMenu={showHamburgerMenu} openSideBar={openSideBar} closeSideBar={closeSideBar} />
         
         {/* Logo container */}
         {/* {showHamburgerMenu ? (

@@ -19,6 +19,7 @@ import useScrollPosition from "../../hooks/useScrollPosition";
 import getTitleName from "utils/getTitleName";
 import isClient from "utils/isClient";
 import Sidebar from './Sidebar';
+import BreshkaNav from "components/topbarcontainers/BreshkaNav";
 
 interface Props {}
 
@@ -89,8 +90,10 @@ export default function TopBar({}: Props): ReactElement {
   return (
     <div className="fixed top-0 inset-x-0 w-full py-5 px-8">
       <nav className="w-full flex place-content-between relative ">
+        <BreshkaNav showHamburgerMenu={showHamburgerMenu} onMain={onMain} />
+        
         {/* Logo container */}
-        {showHamburgerMenu ? (
+        {/* {showHamburgerMenu ? (
           <>
             <MenuIcon className="w-6 h-6 flex-shrink-0" />
           </>
@@ -112,7 +115,7 @@ export default function TopBar({}: Props): ReactElement {
               </Link>
             </div>
 
-            {/** buttons */}
+            
             <div className="flex gap-4 font-bold  text-xs  ">
               <Link href="/main/women">
                 <button
@@ -139,7 +142,7 @@ export default function TopBar({}: Props): ReactElement {
               </Link>
             </div>
           </section>
-        )}
+        )} */}
         {/** Search container */}
         <section className={`flex space-x-2 ${router.asPath === "/main/men" ? "text-white" : "fill-white"}`}>
           <button

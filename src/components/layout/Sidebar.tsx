@@ -47,51 +47,29 @@ export default function Sidebar({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-gray-900/40" />
+            <Dialog.Overlay className="fixed inset-0 " />
           </Transition.Child>
 
-          <div className="fixed inset-y-0 right-0  ">
+          <div className="fixed inset-y-0   ">
             <Transition.Child
               as={Fragment}
-              enter="sm:duration-700 transition ease-in-out  transform" 
-              enterFrom="translate-x-full"
+              enter="sm:duration-700 transition ease-in-out  transform"
+              enterFrom="-translate-x-full"
               enterTo="translate-x-0"
               leave="sm:duration-700"
               leaveFrom="translate-x-0"
-              leaveTo="translate-x-full"
+              leaveTo="-translate-x-full"
             >
-              <div className="min-h-screen transform bg-white shadow-xl text-center">
-                <button
-                  onClick={closeModal}
-                  className="h-24 mb-16"
-                >
-                  <XIcon className="absolute h-6 w-6 ml-auto  right-6 top-4" />
-                </button>
-                <section className="w-96 flex-col space-y-8">
-                  <img
-                    src="/basket-figure.png"
-                    className="w-44 h-auto mx-auto "
-                  />
-                  <div>
-                  <Dialog.Title className=" -extrabold text-xl">
-                    Empty basket
-                  </Dialog.Title>
+              <div className="min-h-screen w-96 transform bg-white shadow-xl text-center flex flex-col">
+              <button>New</button>
+              <button>Clothes</button>
+              <button>Shoes</button>
+              <button>Accessories</button>
+              <button>Collaborations &reg;</button>
+              <button>Basics</button>
+              <button> Join Life</button>
+              <button>Breshak Creators</button>
 
-                  <p className="font-light text-sm  py-2 px-10">
-                    Your basket is still empty,
-                    discover everything we’ve got
-                    for you
-                  </p>
-                  </div>
-                  <button
-                    className="w-32 p-3 border border-gray-300 rounded bg-black text-white hover:bg-gray-800"
-                    type="submit"
-                  >
-                    DISCOVER
-                  </button>
-
-                  
-                </section>
               </div>
             </Transition.Child>
           </div>

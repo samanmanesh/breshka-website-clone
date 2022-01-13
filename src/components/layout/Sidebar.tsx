@@ -10,6 +10,7 @@ import {
   CheckIcon,
   XIcon,
 } from "@heroicons/react/outline";
+import BreshkaNav from "components/topbarcontainers/BreshkaNav";
 
 interface Props {}
 
@@ -61,6 +62,9 @@ export default function Sidebar({
               leaveTo="-translate-x-full"
             >
               <div className="min-h-screen w-96 transform bg-white shadow-xl text-center flex flex-col">
+             
+              {/* <BreshkaNav /> */}
+             
               <button>New</button>
               <button>Clothes</button>
               <button>Shoes</button>

@@ -13,7 +13,7 @@ const BreshkaNav = ({
 }) => {
   const router = useRouter();
   return (
-    <div onMouseOver={openSideBar} onMouseOut={closeSideBar}>
+    <div onMouseOver={openSideBar}>
       {/* Logo container */}
       {showHamburgerMenu ? (
         <>

@@ -33,7 +33,7 @@ export default function TopBar({}: Props): ReactElement {
     setShoppingCartIsOpen,
   ] = useState(false);
   const [sideBarIsOpen, setSideBarIsOpen] =
-  useState(true);
+  useState(false);
 
   const router = useRouter();
   const scrollPosition = useScrollPosition();
@@ -67,7 +67,7 @@ export default function TopBar({}: Props): ReactElement {
   }
 
   function openSideBar() {
-    setSideBarIsOpen(false);
+    setSideBarIsOpen(true);
 
   }
 

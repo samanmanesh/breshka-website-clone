@@ -18,6 +18,7 @@ import ShoppingCartModal from "components/ShoppingCartModal";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import getTitleName from "utils/getTitleName";
 import isClient from "utils/isClient";
+import Sidebar from './Sidebar';
 
 interface Props {}
 
@@ -30,6 +31,9 @@ export default function TopBar({}: Props): ReactElement {
     shoppingCartIsOpen,
     setShoppingCartIsOpen,
   ] = useState(false);
+  const [sideBarIsOpen, setSideBarIsOpen] =
+  useState(false);
+
   const router = useRouter();
   const scrollPosition = useScrollPosition();
 
@@ -55,6 +59,15 @@ export default function TopBar({}: Props): ReactElement {
 
   function openModalShoppingCart() {
     setShoppingCartIsOpen(true);
+  }
+
+  function closeSideBar() {
+    setSideBarIsOpen(false);
+  }
+
+  function openSideBar() {
+    setSideBarIsOpen(true);
+
   }
 
   const onMain = useMemo (()=>{
@@ -192,6 +205,12 @@ export default function TopBar({}: Props): ReactElement {
         isOpen={shoppingCartIsOpen}
         closeModal={closeModalShoppingCart}
         openModal={openModalShoppingCart}
+      />
+
+      <Sidebar 
+      isOpen={sideBarIsOpen}
+      closeModal={closeSideBar}
+      openModal={openSideBar}
       />
     </div>
   );
